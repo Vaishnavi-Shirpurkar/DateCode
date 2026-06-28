@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Invitation ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Floating hearts animation container background -->
+    <div class="hearts-bg" id="hearts-bg"></div>
+
+    <div class="card-container">
+        
+        <!-- PAGE 1: THE PROPOSAL -->
+        <section id="page-1" class="page active">
+            <!-- Circular frame wrapping your cute Tenor bear hug GIF -->
+            <div class="photo-frame-circle">
+                <img src="https://media.tenor.com/Bpb_q1Ex3pEAAAAi/bear-hug.gif" alt="Cute Bears Hugging">
+            </div>
+            <h1 class="romantic-text">Will you go on a date with me? 🌻🌼🌷</h1>
+            <div class="btn-group">
+                <button id="yes-btn" class="primary-btn pulse-animation">Yes! 💕</button>
+                <button id="no-btn" class="secondary-btn">No 😢</button>
+            </div>
+        </section>
+
+             <!-- PAGE 2: THE DESTINATION & TIME PLANNING -->
+        <section id="page-2" class="page">
+            <h1 class="page-title">Chiku, where do you want to go? 🗺️</h1>
+            
+            <div class="cards-grid">
+                <!-- Choice 1: Spider-Man -->
+                <div class="choice-card" data-place="Spider-Man Movie Date 🕷️">
+                    <span class="card-icon">🕷️</span>
+                    <div class="card-info">
+                        <h3>Spider-Man Movie Date</h3>
+                        <p>Catching the brand new movie together!</p>
+                    </div>
+                </div>
+
+                <!-- Choice 2: Tuzya kushit -->
+                <div class="choice-card" data-place="Tuzya kushit ❤️">
+                    <span class="card-icon">❤️</span>
+                    <div class="card-info">
+                        <h3>Tuzya kushit</h3>
+                        <p>In your arms, cozy time spent together.</p>
+                    </div>
+                </div>
+
+                <!-- Choice 3: Late Night Drive -->
+                <div class="choice-card" data-place="Late Night Drive & Ice Cream 🍦">
+                    <span class="card-icon">🍦</span>
+                    <div class="card-info">
+                        <h3>Late Night Drive</h3>
+                        <p>City lights, good music & sweet treats.</p>
+                    </div>
+                </div>
+
+                <!-- Choice 4: Custom Input Toggle Card -->
+                <div class="choice-card" id="custom-option-card" data-place="custom">
+                    <span class="card-icon">✨</span>
+                    <div class="card-info">
+                        <h3>Somewhere Else?</h3>
+                        <p>Type your own dream date destination!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden sliding text field for custom choice -->
+            <div id="custom-input-container" class="input-group hidden">
+                <input type="text" id="custom-destination-input" placeholder="e.g., Beachside Picnic or Bowling Alley...">
+            </div>
+
+            <!-- New Integrated Date & Time Picker Section -->
+            <div class="planning-scheduler">
+                <div class="schedule-box">
+                    <label for="date-select">📆 Pick a Day</label>
+                    <input type="date" id="date-select" required>
+                </div>
+                             <div class="schedule-box">
+                    <label for="time-select">⏰ Pick a Time <span class="time-hint">(AM / PM)</span></label>
+                    <input type="time" id="time-select" required>
+                </div>
+            </div>
+            
+            <!-- Upgraded Action Route Button -->
+            <button id="next-to-page3" class="primary-btn">Confirm Your Date 💖</button>
+        </section>
+
+
+        <!-- PAGE 3: THE FINAL ROMANTIC VIBE & ITINERARY -->
+        <section id="page-3" class="page">
+            <h1 class="page-title">See You Soon, Chiku! ❤️</h1>
+            
+            <div class="split-itinerary-layout">
+                
+                <!-- LEFT HAND SIDE: AUTOMATIC RETRO VINYL PLAYER -->
+                <div class="music-station-panel">
+                    <div class="vinyl-wrapper">
+                        <!-- Custom retro vinyl disk set to spin automatically -->
+                        <div class="vinyl-disk spinning" id="vinyl-disk">
+                            <div class="vinyl-center-label">💖</div>
+                        </div>
+                    </div>
+                    
+                    <!-- New Smart Dual-Track Control Station UI -->
+                    <div class="audio-controller-card">
+                        <span class="track-indicator" id="current-track-name">🎵 Track 1: Sweet Romance</span>
+                        <div class="player-controls">
+                            <button id="prev-song-btn" class="ctrl-btn">⏮️</button>
+                            <button id="toggle-play-btn" class="ctrl-btn active-play-state">⏸️</button>
+                            <button id="next-song-btn" class="ctrl-btn">⏭️</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Dual background audio file streams -->
+                    <audio id="bg-love-song-1" src="our-song.mp3" loop></audio>
+                    <audio id="bg-love-song-2" src="our-song2.mp3" loop></audio>
+                </div>
+
+                <!-- RIGHT HAND SIDE: ROTATING COUPLER PHOTO GALLERY & SUMMARY DETAILS -->
+                <div class="itinerary-summary-panel">
+                     <!-- Elegant floating Polaroid picture deck -->
+                    <div class="polaroid-frame-deck">
+                        <!-- Updated default link extension from .jpg to .webp to match your custom files -->
+                        <img id="rotating-polaroid" src="images/pic1.webp" onerror="this.src='https://unsplash.com'" alt="Us">
+                        <div class="polaroid-caption">You & Me Always ✨</div>
+                    </div>
+
+
+                    <!-- Final interactive content summary breakdown -->
+                    <div id="final-summary" class="summary-box">
+                        <h2>It's officially a date! 💖</h2>
+                        <div class="itinerary-details">
+                            <p>📍 <strong>Place:</strong> <span id="summary-place"></span></p>
+                            <p>📅 <strong>Date:</strong> <span id="summary-date"></span></p>
+                            <p>⏰ <strong>Time:</strong> <span id="summary-time"></span></p>
+                        </div>
+                        
+                        <!-- Restored beautiful pink style and cache-busting unique Telegram ID -->
+                        <button id="telegram-final-dispatch" class="primary-btn confirm-seal-btn">Share Our Confirmed Plan ✨</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

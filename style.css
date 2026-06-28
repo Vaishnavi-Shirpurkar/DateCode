@@ -1,0 +1,645 @@
+/* Reset defaults and enforce beautiful scaling across all screen sizes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- GLOBAL THEME & ACCESSIBLE VIEWS --- */
+body {
+    background: linear-gradient(135deg, #ffeef8 0%, #f0f4ff 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px; /* Comfortable padding safeguards on device borders */
+    position: relative;
+    overflow-x: hidden; 
+    overflow-y: auto; /* Natural document scrolling track defaults */
+}
+
+/* Card Container: Fully responsive landscape/portrait design architecture */
+.card-container {
+    background: #ffffff;
+    max-width: 650px; 
+    width: 100%;       
+    border-radius: 32px;
+    border: 2px solid rgba(255, 105, 180, 0.25);
+    box-shadow: 0 25px 55px rgba(255, 105, 180, 0.35);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Beautifully centers content on wide desktop screens */
+    align-items: center;
+    z-index: 10;
+    position: relative; 
+    min-height: 540px;
+}
+
+/* --- TURBOCHARGED RESPONSIVE INTERACTION SAFEGUARDS --- */
+@media (max-width: 600px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        padding: 15px 10px;
+        min-height: 100vh;
+    }
+
+    .card-container {
+        justify-content: flex-start; 
+        /* Expands the internal bottom breathing room so the pink layout container sits perfectly inside */
+        padding: 30px 15px 45px 15px; 
+        min-height: unset; 
+        height: auto;           /* Forces the white card box to organically stretch based on content size */
+        max-height: none;       /* Destroys any restrictive screen clipping limits */
+        width: 100%;
+        box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
+    }
+
+
+    /* Enforces text wrapping rules so late-night button strings scale cleanly */
+    #next-to-page3 {
+        width: 100%;
+        max-width: 100%;
+        white-space: normal; 
+        font-size: 1rem;     
+        padding: 12px 20px;
+        line-height: 1.3;
+        height: auto;
+    }
+
+    /* NEW FEATURE: Forces Page 3 to stack in a centered, beautiful vertical line on mobile views */
+    .split-itinerary-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    /* NEW FEATURE: Centers the music control deck on mobile */
+    .music-station-panel {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+    }
+
+    /* NEW FEATURE: Centers the photo frame element layout cleanly */
+    .itinerary-summary-panel {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
+    }
+
+    /* NEW FEATURE: Maximizes polaroid photo alignment scaling on phone screens */
+    .polaroid-frame-deck {
+        max-width: 240px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        transform: rotate(0deg) !important; /* Removes the tilt on mobile so it centers perfectly */
+    }
+}
+
+
+
+/* Custom styling to keep the inner scrollbar clean and minimalist */
+.card-container::-webkit-scrollbar {
+    width: 6px;
+}
+.card-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 64, 129, 0.2);
+    border-radius: 10px;
+}
+
+
+/* Graphic Presentation Frame Container */
+.photo-frame-circle {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-frame-circle img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Headline: Restoring the gorgeous cursive typography from your original vision */
+.romantic-text {
+    font-family: 'Sacramento', cursive;
+    font-size: 3rem; /* Beautiful big scale on laptops */
+    color: #d63384;
+    margin: 15px 0;
+    line-height: 1.3;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+/* Responsive Font Scaling for Mobile Layout Views */
+@media (max-width: 480px) {
+    .romantic-text {
+        font-size: 2.2rem; /* Softens font size on small phone screens so it never breaks layout rows */
+    }
+    .card-container {
+        padding: 30px 20px; /* Tighter padding on smaller phone screens */
+    }
+}
+
+/* Button Group Base Setup Layout Row */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 25px;
+    width: 100%;
+    position: relative;
+    min-height: 70px;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #ff4081 0%, #ec407a 100%);
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(236, 64, 122, 0.35);
+    transition: transform 0.2s ease;
+    /* Prevent the dynamic button text from ever wrapping onto a second row */
+    white-space: nowrap;
+}
+
+
+.primary-btn:hover {
+    transform: scale(1.06);
+}
+
+.pulse-animation {
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.secondary-btn {
+    background: #f8fafc;
+    color: #495057;
+    border: 2px solid #e2e8f0;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: left 0.15s ease-out, top 0.15s ease-out; /* Makes the runaway movement feel incredibly smooth and playful instead of teleporting instantly */
+}
+
+/* Inactive hidden multi-page sections container block values */
+.page {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* Floating Hearts Background Wrap Layers */
+.hearts-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-heart { position: absolute; color: rgba(255, 20, 147, 0.2); animation: floatUp 6s linear infinite; bottom: -20px; }
+.floating-bear { position: absolute; opacity: 1 !important; animation: floatUp 6s linear infinite; bottom: -20px; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
+}
+
+.cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin-top: 25px; /* Added spacing to separate the headline from the first card option */
+    margin-bottom: 25px;
+}
+
+.choice-card {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Card Selection Hover States */
+.choice-card:hover {
+    border-color: #ff4081;
+    background: #fff5f8;
+    transform: translateY(-2px);
+}
+
+/* Custom Highlight Border Glow when a choice is clicked */
+.choice-card.selected {
+    border-color: #ff4081;
+    background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 100%);
+    box-shadow: 0 8px 20px rgba(255, 64, 122, 0.15);
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-info h3 {
+    font-size: 1.15rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    line-height: 1.4;
+}
+
+/* Spacing tweak for the Next button layout wrapper */
+#next-to-page3 {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 320px;
+}
+
+
+/* --- PAGE 2 SCHEDULER & FORMS EXTENSIONS --- */
+#custom-input-container {
+    width: 100%;
+    margin: -5px 0 20px 0;
+    animation: fadeInSlide 0.3s ease;
+}
+
+#custom-destination-input {
+    width: 100%;
+    padding: 12px 18px;
+    border: 2px solid #ff4081;
+    border-radius: 14px;
+    font-size: 1rem;
+    color: #334155;
+    outline: none;
+    background-color: #fff5f8;
+}
+
+/* Grid layout for Date and Time pickers */
+.planning-scheduler {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+    .planning-scheduler {
+        grid-template-columns: 1fr; /* Stacks vertically on phone screens */
+    }
+}
+
+.schedule-box {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.schedule-box label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.schedule-box input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    color: #4a5568;
+    outline: none;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.schedule-box input:focus {
+    border-color: #ff4081;
+    background: #ffffff;
+}
+
+#next-to-page3 {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 340px;
+}
+
+@keyframes fadeInSlide {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* --- PAGE 3 VISUAL DESIGN EXTENSIONS --- */
+.split-itinerary-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    width: 100%;
+    margin-top: 25px;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    .split-itinerary-layout {
+        grid-template-columns: 1fr; /* Stacks layout sections elegantly on mobile screen widths */
+    }
+}
+
+/* Vinyl Player Area Layout Design */
+.music-station-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 240, 245, 0.6); /* Soft translucent pink background block */
+    padding: 25px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 105, 180, 0.15);
+}
+
+.vinyl-wrapper {
+    width: 150px;
+    height: 150px;
+    background: #111;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 12px;
+}
+
+.vinyl-disk {
+    width: 100%;
+    height: 100%;
+    background: repeating-radial-gradient(#2c2c2c, #1a1a1a 4px, #2c2c2c 5px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Infinite crisp rotation animation loop */
+.vinyl-disk.spinning {
+    animation: spinVinyl 4s linear infinite;
+}
+
+@keyframes spinVinyl {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.vinyl-center-label {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #ff4081, #ec407a);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+    border: 3px solid #111;
+}
+
+.song-station-subtitle {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Polaroid Image frame configuration */
+.itinerary-summary-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Premium Enlarged Polaroid Image Decoration Deck Frame */
+.polaroid-frame-deck {
+    background: #ffffff;
+    /* Clean, realistic photograph border padding dimensions */
+    padding: 16px 16px 35px 16px; 
+    border-radius: 8px;
+    /* Premium multi-layered photo deck shadow depth */
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.1),
+        0 5px 15px rgba(255, 105, 180, 0.05);
+    transform: rotate(-2deg); /* Keeps that cute artistic casual tilt */
+    width: 100%;
+    max-width: 250px; /* Increased from 200px to give you much better picture visibility */
+    margin-bottom: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.03); /* Tiny crisp photo edge outline */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Elegant hover interaction to make the photo pop when she moves her pointer near it */
+.polaroid-frame-deck:hover {
+    transform: rotate(1deg) scale(1.04);
+    box-shadow: 0 20px 45px rgba(255, 64, 129, 0.15);
+}
+
+.polaroid-frame-deck img {
+    width: 100%;
+    height: 220px; /* Increased taller height to balance out the new frame layout scale */
+    object-fit: cover; /* Keeps your faces perfectly centered and un-stretched automatically */
+    border-radius: 4px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Soft inner lens shadow asset depth */
+    border: 1px solid #f1f5f9;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Script cursive handwriting style font below the couple photo */
+.polaroid-caption {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.7rem; /* Enlarged slightly for beautiful text legibility */
+    color: #334155;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+
+/* Premium Final Sheet Box Breakdown */
+.summary-box {
+    background: linear-gradient(135deg, #fff5f8 0%, #ffebf2 100%);
+    border: 2px dashed #ff4081;
+    color: #334155;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 64, 122, 0.05);
+    text-align: left;
+}
+
+.summary-box h2 {
+    font-size: 1.25rem;
+    color: #d63384;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255,64,129,0.15);
+    padding-bottom: 6px;
+    text-align: center;
+}
+
+.itinerary-details p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.02);
+}
+/* Time input indicator hint text style */
+.time-hint {
+    font-size: 0.75rem;
+    color: #ff4081;
+    font-weight: 500;
+    margin-left: 4px;
+    opacity: 0.85;
+}
+
+/* --- PREMIUM AUDIO CONTROLLER STATION --- */
+.vinyl-center-label {
+    width: 44px;
+    height: 44px;
+    background: #ff4081;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.1rem;
+    border: 3px solid #111;
+    box-shadow: 0 0 12px rgba(255, 64, 129, 0.7);
+    animation: heartPulse 1.4s infinite ease-in-out; /* Continuous dynamic pulsing accent */
+}
+
+@keyframes heartPulse {
+    0% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.08); filter: brightness(1.2); }
+    100% { transform: scale(1); filter: brightness(1); }
+}
+
+.audio-controller-card {
+    background: #ffffff;
+    border: 1px solid rgba(255, 105, 180, 0.2);
+    padding: 12px 18px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    margin-top: 15px;
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+}
+
+.track-indicator {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.ctrl-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    user-select: none;
+}
+
+.ctrl-btn:hover {
+    transform: scale(1.15);
+}
+
+.ctrl-btn:active {
+    transform: scale(0.95);
+}
